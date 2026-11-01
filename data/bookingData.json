@@ -1,0 +1,88 @@
+{
+  "positiveCases": [
+    {
+      "scenario": "Standard Single Night Stay with Breakfast",
+      "payload": {
+        "firstname": "Alice",
+        "lastname": "Smith",
+        "totalprice": 120,
+        "depositpaid": true,
+        "bookingdates": {
+          "checkin": "2026-11-01",
+          "checkout": "2026-11-02"
+        },
+        "additionalneeds": "Breakfast"
+      },
+      "expectedStatus": 200
+    },
+    {
+      "scenario": "Extended Stay with Late Checkout and No Deposit",
+      "payload": {
+        "firstname": "Robert",
+        "lastname": "Johnson",
+        "totalprice": 850,
+        "depositpaid": false,
+        "bookingdates": {
+          "checkin": "2026-12-01",
+          "checkout": "2026-12-15"
+        },
+        "additionalneeds": "Late Checkout"
+      },
+      "expectedStatus": 200
+    },
+    {
+      "scenario": "VIP Luxury Stay with Airport Shuttle and Full Deposit",
+      "payload": {
+        "firstname": "Sophia",
+        "lastname": "Martinez",
+        "totalprice": 1999,
+        "depositpaid": true,
+        "bookingdates": {
+          "checkin": "2027-01-10",
+          "checkout": "2027-01-20"
+        },
+        "additionalneeds": "Airport Shuttle, Champagne"
+      },
+      "expectedStatus": 200
+    },
+    {
+      "scenario": "Minimal Booking with Zero Additional Needs",
+      "payload": {
+        "firstname": "Liam",
+        "lastname": "Brown",
+        "totalprice": 50,
+        "depositpaid": true,
+        "bookingdates": {
+          "checkin": "2026-11-20",
+          "checkout": "2026-11-21"
+        }
+      },
+      "expectedStatus": 200
+    }
+  ],
+  "negativeCases": [
+    {
+      "scenario": "Missing required 'firstname' field",
+      "payload": {
+        "lastname": "Doe",
+        "totalprice": 100,
+        "depositpaid": true,
+        "bookingdates": {
+          "checkin": "2026-11-01",
+          "checkout": "2026-11-05"
+        }
+      },
+      "expectedStatus": 500
+    },
+    {
+      "scenario": "Missing required 'bookingdates' object",
+      "payload": {
+        "firstname": "Jane",
+        "lastname": "Doe",
+        "totalprice": 100,
+        "depositpaid": true
+      },
+      "expectedStatus": 500
+    }
+  ]
+}

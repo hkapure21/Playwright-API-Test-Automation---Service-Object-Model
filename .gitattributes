@@ -1,0 +1,7 @@
+# Normalize all files to use LF line endings
+* text=auto eol=lf
+
+# Ensure playwright files use LF as well (though already set above, this makes it explicit)
+**/*.js text=auto eol=lf
+**/*.ts text=auto eol=lf
+**/*.json text=auto eol=lf

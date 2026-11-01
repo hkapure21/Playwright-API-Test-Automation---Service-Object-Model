@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": ".",
+    "paths": {
+      "@service/*": ["service/*"],
+      "@fixtures/*": ["fixtures/*"],
+      "@models/*": ["models/*"],
+      "@data/*": ["data/*"],
+      "@utils/*": ["utils/*"]
+    }
+  },
+  "include": ["tests/**/*", "service/**/*", "fixtures/**/*", "models/**/*", "utils/**/*", "data/**/*", "playwright.config.ts"]
+}
